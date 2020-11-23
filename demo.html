@@ -19,17 +19,37 @@
   import {mglStreetViewControl} from './mglStreetViewControl.js'
   var map = new mapboxgl.Map({
     container: 'map',
-    center: [-82.015584,39.940749],
+    center: [-82.013174,39.940592],
     // style: 'mapbox://styles/mapbox/streets-v11',
     zoom: 16.5,
     hash: true
   });
 
-  map.addControl(new mglStreetviewControl({
-    mapillaryAlias: "COZ"
-  }), 'top-right');
+  fetch("./data.geojson")
+  .then(res => res.json())
+  .then(data => {
+    map.addLayer({
+      id: "layer",
+      type: "line",
+      source: {
+        type: "geojson",
+        data: data
+      },
+      paint: {
+        "line-color": "black",
+        "line-width": 2
+      }
+    });
+    map.addControl(new mglStreetViewControl({
+      mapillaryAlias: "COZ"
+    }), 'top-right');
 
-  document.querySelector("#mglStreetViewControl").click()
+    map.on("load", function() {
+      document.querySelector("#mglStreetViewControl").click()
+    })
+  })
+
+
 
 </script>
  
