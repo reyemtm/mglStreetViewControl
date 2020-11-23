@@ -14,7 +14,7 @@ This plugin will add a button to open either Google Street View or Mapillary at 
   }), 'top-right');
 ```
 
-Available options include setting the ``pano`` setting to true or false (1 or 0), and filtering the Mapillary images by a Mapillary ``userKey``. By default the 
+Available options include setting the ``pano`` or 360 deg panoramic setting to true or false (1 or 0), and filtering the Mapillary images by a Mapillary ``userKey``. By default the panoramic setting is on and the ``userKey`` is set to the City of Zanesville. If the pano is set and the ``userKey`` is omitted or marked false, the all Mapillary images are shown that match the ``pano`` setting.
 
 > The plugin should be added *after* the `map.load` event, as it adds mapillary layers to the map.
 
