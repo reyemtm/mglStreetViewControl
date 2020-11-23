@@ -16,7 +16,7 @@
  
 <script type="module">
 
-  import {mglStreetviewControl} from './mglStreetViewControl.js'
+  import {mglStreetViewControl} from './mglStreetViewControl.js'
   var map = new mapboxgl.Map({
     container: 'map',
     center: [-82.015584,39.940749],
@@ -25,7 +25,7 @@
     hash: true
   });
 
-  map.addControl(new mglStreetViewControl({
+  map.addControl(new mglStreetviewControl({
     mapillaryAlias: "COZ"
   }), 'top-right');
 
