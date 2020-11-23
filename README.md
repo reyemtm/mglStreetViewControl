@@ -20,4 +20,6 @@ Check the license for Google and Mapillary to see if this plugin is suitable for
 
 ---
 
-A project by [Malcolm Meyer | getBounds](https://www.getBounds.com).
+A project by [getBounds](https://www.getBounds.com).
+
+&copy; 2020 Malcolm Meyer (MIT)
