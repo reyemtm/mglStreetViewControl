@@ -23,6 +23,7 @@ class mglStreetviewControl {
     this._btn.type = 'button';
     this._btn['aria-label'] = 'Open Streetview';
     this._btn['title'] = 'Open Streetview';
+    this._btn.id = "mglStreetviewControl"
 
     //spectre css only
     //TODO add option to put this on right if control is set to the right
@@ -30,12 +31,20 @@ class mglStreetviewControl {
     this._btn.dataset.tooltip = "Open Streetview"
 
     //add mapillary points and lines
-    showLoading()
     const _mapillaryLayers = mapillaryLayers(this._mapillaryLayerOptions);
-    _mapillaryLayers.map(l => {
-      this._map.addLayer(l);
-    });
-    hideLoading()
+
+    if (!_map.style) {
+      _mapillaryLayers.map(l => {
+        this._map.addLayer(l);
+      });
+    }else{
+      _map.on("load", function() {
+        _mapillaryLayers.map(l => {
+          _map.addLayer(l);
+        });
+      })
+    }
+
 
     const _mapMinZoom = this._map.getMinZoom();
 
@@ -73,11 +82,21 @@ class mglStreetviewControl {
         toast.id = "streetviewControlToast";
         toast.classList.add("toast");
         toast.style.backgroundColor = "firebrick";
-        toast.innerHTML = "Drag the marker to a location on the street. The selected street view option will open in a new window.";
+        toast.style.position = "absolute";
+        toast.style.bottom = 0;
+        toast.style.width = "100%";
+        toast.style.padding = "1rem 0";
+        toast.style.textAlign = "center";
+        toast.style.color = "white";
+        toast.innerText = "Drag the marker to a location on the street. The selected street view option will open in a new window.";
         document.body.appendChild(toast);
       } else {
         document.getElementById("streetviewControlToast").style.display = "block";
       }
+
+      setTimeout(function() {
+        document.getElementById("streetviewControlToast").style.display = "none"
+      }, 2000)
 
       //listener for 'dragend' event
       async function onDragEnd() {
