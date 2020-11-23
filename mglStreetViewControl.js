@@ -33,18 +33,9 @@ class mglStreetViewControl {
     //add mapillary points and lines
     const _mapillaryLayers = mapillaryLayers(this._mapillaryLayerOptions);
 
-    if (!_map.style) {
-      _mapillaryLayers.map(l => {
-        this._map.addLayer(l);
-      });
-    }else{
-      _map.on("load", function() {
-        _mapillaryLayers.map(l => {
-          _map.addLayer(l);
-        });
-      })
-    }
-
+    _mapillaryLayers.map(l => {
+      _map.addLayer(l);
+    });
 
     const _mapMinZoom = this._map.getMinZoom();
 

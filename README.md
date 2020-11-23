@@ -12,3 +12,5 @@
 Mapbox GL JS Street View Control
 
 This will add a button to open either Google Street View or Mapillary Street View once the user moves the added map pin. Check the license for Google and Mapillary to see if this plugin is suitable for your application.
+
+The plugin should be added *after* the `map.load` event, as it adds mapillary layers to the map.
