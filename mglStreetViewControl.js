@@ -9,7 +9,7 @@ class mglStreetViewControl {
       userKey: "WpzhyQeWLPnZ_TwvxcdU_w",
       pano: 1
     } : {
-      userKey (!options.mapillaryLayerOptions.userKey) ? false : options.mapillaryLayerOptions.userKey,
+      userKey: (!options.mapillaryLayerOptions.userKey) ? false : options.mapillaryLayerOptions.userKey,
       pano: (!options.mapillaryLayerOptions.pano) ? 0 : options.mapillaryLayerOptions.pano,
     }
   }
