@@ -15,19 +15,22 @@
 <div id="map"></div>
  
 <script type="module">
-  import {mglStreetviewControl} from './mglStreetviewControl.js'
+
+  import {mglStreetviewControl} from './test.js'
   var map = new mapboxgl.Map({
-  container: 'map',
-  center: [12.550343, 55.665957],
-  zoom: 8
+    container: 'map',
+    center: [-82.015584,39.940749],
+    // style: 'mapbox://styles/mapbox/streets-v11',
+    zoom: 16.5,
+    hash: true
   });
 
-  var marker = new mapboxgl.Marker()
-  .setLngLat([-82.009951,-39.940538])
-  .addTo(map);
   map.addControl(new mglStreetviewControl({
     mapillaryAlias: "COZ"
   }), 'top-right');
+
+  document.querySelector("#mglStreetviewControl").click()
+
 </script>
  
 </body>
