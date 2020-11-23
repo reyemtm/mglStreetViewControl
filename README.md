@@ -14,9 +14,11 @@ This plugin will add a button to open either Google Street View or Mapillary at 
   }), 'top-right');
 ```
 
+Available options include setting the ``pano`` setting to true or false (1 or 0), and filtering the Mapillary images by a Mapillary ``userKey``.
+
 > The plugin should be added *after* the `map.load` event, as it adds mapillary layers to the map.
 
-Check the license for Google and Mapillary to see if this plugin is suitable for your application.
+*Check the license for Google and Mapillary to see if this plugin is suitable for your application.*
 
 ---
 
