@@ -8,7 +8,10 @@ class mglStreetViewControl {
     this._mapillaryLayerOptions = (!options || !options.mapillaryLayerOptions) ? {
       userKey: "WpzhyQeWLPnZ_TwvxcdU_w",
       pano: 1
-    } : options.mapillaryLayerOptions
+    } : {
+      userKey: (!options.mapillaryLayerOptions.userKey) ? false : options.mapillaryLayerOptions.userKey,
+      pano: (!options.mapillaryLayerOptions.pano) ? 0 : options.mapillaryLayerOptions.pano,
+    }
   }
 
   onAdd (map) {

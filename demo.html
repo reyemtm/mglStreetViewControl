@@ -41,7 +41,10 @@
       }
     });
     map.addControl(new mglStreetViewControl({
-      mapillaryAlias: "COZ"
+      mapillaryAlias: "COZ",
+      mapillaryLayerOptions: {
+        userKey: false
+      }
     }), 'top-right');
 
     map.on("load", function() {
