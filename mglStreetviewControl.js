@@ -1,4 +1,4 @@
-class mapStreeviewControl {
+class mglStreetviewControl {
   /**
    * 
    * @param {NewType} options 
@@ -157,7 +157,7 @@ class mapStreeviewControl {
 }
 
 export {
-  mapStreeviewControl
+  mglStreetviewControl
 };
 
 
