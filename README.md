@@ -18,3 +18,5 @@ This plugin will add a button to open either Google Street View or Mapillary at 
 > The plugin should be added *after* the `map.load` event, as it adds mapillary layers to the map.
 
 Check the license for Google and Mapillary to see if this plugin is suitable for your application.
+
+A project by [Malcolm Meyer | getBounds](https://www.getBounds.com).
