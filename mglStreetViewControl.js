@@ -23,7 +23,7 @@ class mglStreetViewControl {
     this._btn.type = 'button';
     this._btn['aria-label'] = 'Open Streetview';
     this._btn['title'] = 'Open Streetview';
-    this._btn.id = "mglStreetviewControl"
+    this._btn.id = "mglStreetViewControl"
 
     //spectre css only
     //TODO add option to put this on right if control is set to the right
@@ -96,7 +96,7 @@ class mglStreetViewControl {
 
       setTimeout(function() {
         document.getElementById("streetviewControlToast").style.display = "none"
-      }, 2000)
+      }, 2600)
 
       //listener for 'dragend' event
       async function onDragEnd() {
