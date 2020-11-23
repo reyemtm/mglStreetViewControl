@@ -7,14 +7,14 @@ This plugin will add a button to open either Google Street View or Mapillary at 
 ```JavaScript
   map.addControl(new mglStreetViewControl({
     mapillaryAlias: "COZ" //optional
-    mapillaryLayerOptions: { //optional, defaults to City of Zanesville uploaded images and panormamic set to on
-      userKey: "<MapillaryUserKey>",
-      pano: 1 //1 or 0
+    mapillaryLayerOptions: {
+      userKey: "<MapillaryUserKey>", //optional - default to City of Zanesville imagery, can be cleared by setting to false or only setting the pano setting
+      pano: 1 //1 or 0 //defaults to 1
     }
   }), 'top-right');
 ```
 
-Available options include setting the ``pano`` setting to true or false (1 or 0), and filtering the Mapillary images by a Mapillary ``userKey``.
+Available options include setting the ``pano`` setting to true or false (1 or 0), and filtering the Mapillary images by a Mapillary ``userKey``. By default the 
 
 > The plugin should be added *after* the `map.load` event, as it adds mapillary layers to the map.
 
