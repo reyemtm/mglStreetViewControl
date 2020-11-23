@@ -19,4 +19,4 @@ This plugin will add a button to open either Google Street View or Mapillary at 
 Check the license for Google and Mapillary to see if this plugin is suitable for your application.
 
 
-*A project by [Malcolm Meyer | getBounds](https://www.getBounds.com).*
+A project by [Malcolm Meyer | getBounds](https://www.getBounds.com).
