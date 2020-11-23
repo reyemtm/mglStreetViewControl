@@ -1,4 +1,4 @@
-class mglStreetviewControl {
+class mglStreetViewControl {
   /**
    * 
    * @param {NewType} options 
@@ -176,7 +176,7 @@ class mglStreetviewControl {
 }
 
 export {
-  mglStreetviewControl
+  mglStreetViewControl
 };
 
 
