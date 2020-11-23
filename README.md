@@ -1,7 +1,7 @@
 # Mapbox GL JS Street View Control
 
 ```JavaScript
-  map.addControl(new cozMAP.mapStreeviewControl({
+  map.addControl(new cozMAP.mglStreetviewControl({
     mapillaryAlias: "COZ" //optional
     mapillaryLayerOptions: { //optional, defaults to City of Zanesville uploaded images and panormamic set to on
       userKey: "<MapillaryUserKey>",
