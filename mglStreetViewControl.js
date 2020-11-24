@@ -114,18 +114,14 @@ class mglStreetViewControl {
         const mapillaryImages = _map.queryRenderedFeatures(bbox, { layers: mapillaryLayerIds });
         const mapillaryExists = (!mapillaryImages.length) ? false : true;
 
-        //compile url
-        const imgSource = (!mapillaryExists) ? "google" : (confirm(_mapillaryAlias + " Street View Imagery is avalable at this location.\n\nClick 'OK' to use " + _mapillaryAlias + " Street View Imagery\n--OR--\n'Cancel' to use Google Street View Imagery")) ? "mapillary" : "google";
-        let url = "";
-        if (imgSource === "mapillary") {
-          url = "https://www.mapillary.com/app/?z=16&lat=" + lat + "&lng=" + lng + "&focus=photo&panos=true&pKey=" + mapillaryImages[0].properties.key;
-        } else {
-          url = "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=".concat(lngLat.lat, ",").concat(lngLat.lng);
+        const urls = ["https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=".concat(lngLat.lat, ",").concat(lngLat.lng)]
+        if (mapillaryExists) {
+          urls.push("https://www.mapillary.com/app/?z=16&lat=" + lat + "&lng=" + lng + "&focus=photo&panos=true&pKey=" + mapillaryImages[0].properties.key);
         }
-
-        console.log(url);
+        const imgSource = (urls.length < 2) ? 0 : (confirm(_mapillaryAlias + " Street View Imagery is avalable at this location.\n\nClick 'OK' to use " + _mapillaryAlias + " Street View Imagery\n--OR--\n'Cancel' to use Google Street View Imagery")) ? 1 : 0;
+        
+        window.open(urls[imgSource], "_self")
         reset(this);
-        window.open(url);
 
       }
 
